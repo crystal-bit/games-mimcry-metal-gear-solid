@@ -2,11 +2,11 @@ extends KinematicBody
 
 
 export var speed = 3
-
+var target_angle = 0
 
 func _ready():
-	pass # Replace with function body.
-
+	$MeshInstance.rotate_y(PI / 2)
+	
 
 func _process(delta):
 	var movement = Vector3()
@@ -15,6 +15,7 @@ func _process(delta):
 	movement.x = Input.get_axis("ui_left", "ui_right")
 	movement = movement.normalized()
 	
-#	translation += delta * movement * speed
+	var vec = Vector2(0, 1)
+	target_angle = vec.angle_to(Vector2(movement.x, -movement.z)) 
+	$MeshInstance.rotation.y = lerp_angle($MeshInstance.rotation.y, target_angle, 0.2)
 	move_and_collide(movement * speed * delta)
-		
