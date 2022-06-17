@@ -10,6 +10,6 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="Cone" type="Sprite" parent="."]
-rotation = -6.28319
+rotation = -2.35619
 texture = ExtResource( 4 )
 centered = false

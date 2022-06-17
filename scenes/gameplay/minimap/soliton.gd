@@ -15,7 +15,7 @@ func _ready():
 
 func update_minimap(create_pins = false):
 	for enemy in get_tree().get_nodes_in_group("enemy"):
-		var enemy_pin
+		var enemy_pin: Node2D
 		if create_pins:
 			enemy_pin = create_enemy_pin()
 			enemy_pin.name = enemy.name + "Pin"
@@ -28,6 +28,7 @@ func update_minimap(create_pins = false):
 			enemy.translation.z - player.translation.z
 		)
 		enemy_pin.position = minimap_size / 2 + offset_from_player * minimap_scale
+		enemy_pin.rotation = -enemy.rotation.y
 #		var minimap_rect = get_rect()
 #		var margin = 10
 #		minimap_rect.position = Vector2(margin, margin)
