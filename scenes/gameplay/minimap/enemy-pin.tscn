@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/minimap/enemy.png" type="Texture" id=2]
+[ext_resource path="res://assets/minimap/cone.png" type="Texture" id=4]
+
+[node name="EnemyPin" type="Node2D"]
+
+[node name="PinTexture" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="Cone" type="Sprite" parent="."]
+rotation = -6.28319
+texture = ExtResource( 4 )
+centered = false
