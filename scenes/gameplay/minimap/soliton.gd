@@ -1,7 +1,7 @@
 extends TextureRect
 
 onready var player_pin = $Player
-onready var player := get_parent().get_parent().get_node("Player")
+onready var player := get_parent().get_parent().get_parent().get_node("Player")
 
 export(float, 0.5, 15) var minimap_scale: = 6
 var minimap_size: Vector2
